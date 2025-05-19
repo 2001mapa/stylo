@@ -1,0 +1,254 @@
+/* Estilos base */
+body, html {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  min-height: 100vh;
+  font-family: Arial, sans-serif;
+}
+
+/* Contenedor principal con overlay */
+.app-wrapper {
+  width: 100%;
+  min-height: 100vh;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+.app-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.4);
+  z-index: 0;
+}
+
+.app-container {
+  width: 100%;
+  max-width: 1000px;
+  padding: 20px;
+  margin: 0 auto;
+  flex: 1;
+  position: relative;
+  z-index: 1;
+}
+
+/* Título */
+.main-title {
+  font-family: 'Arial Black', sans-serif;
+  font-size: 4rem;
+  color: white;
+  margin: 10px 0 0;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  position: relative;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+/* Subrayado multicolor */
+.main-title::after {
+  content: "";
+  display: block;
+  width: 150px;
+  height: 5px;
+  background: linear-gradient(to right, 
+    #6c5ce7, 
+    #25D366, 
+    #E1306C, 
+    #000000);
+  margin: 10px auto 20px;
+  border-radius: 3px;
+}
+
+/* Contenedor de columnas */
+.linktree-container {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  height: 400px;
+  align-items: flex-end;
+  margin-top: 30px;
+}
+
+/* Tarjetas/Columnas con efecto vidrio */
+.link-card {
+  border-radius: 80px;
+  padding: 20px 5px;
+  text-align: center;
+  text-decoration: none;
+  color: white;
+  transition: all 0.5s cubic-bezier(0.25, 0.8, 0.25, 1);
+  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 90%;
+  position: relative;
+  overflow: hidden;
+  backdrop-filter: blur(10px);
+  background-color: rgba(255, 255, 255, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  z-index: 1;
+}
+
+/* Efecto hover */
+.linktree-container:hover .link-card {
+  flex: 0.7;
+  filter: brightness(0.9);
+}
+
+.link-card:hover {
+  flex: 2 !important;
+  transform: scale(1.05);
+  box-shadow: 0 15px 30px rgba(0,0,0,0.4);
+  z-index: 2;
+  filter: brightness(1.1);
+  backdrop-filter: blur(12px);
+}
+
+/* Colores de fondo para hover */
+.catalog:hover { background: linear-gradient(135deg, #000000cc, #ffffffcc); }
+.whatsapp:hover { background: linear-gradient(135deg, #25D366cc, #128C7Ecc); }
+.instagram:hover { background: linear-gradient(135deg, #E1306Ccc, #833AB4cc); }
+.tiktok:hover { background: linear-gradient(135deg, #000000cc, #25F4EEcc); }
+
+/* Iconos */
+.link-card img {
+  width: 60px;
+  height: 60px;
+  margin-bottom: 20px;
+  transition: all 0.3s ease;
+  filter: 
+    drop-shadow(0 0 8px rgba(255, 255, 255, 0.7))
+    drop-shadow(0 0 12px rgba(255, 255, 255, 0.5));
+}
+
+.link-card:hover img {
+  transform: scale(1.2);
+  filter: 
+    drop-shadow(0 0 12px rgba(255, 255, 255, 0.9))
+    drop-shadow(0 0 18px rgba(255, 255, 255, 0.7));
+}
+
+/* Emojis */
+.items span {
+  font-size: 40px;
+  margin: 0 10px;
+  display: inline-block;
+  transition: all 0.3s ease;
+  text-shadow: 0 0 8px rgba(255, 255, 255, 0.7);
+}
+
+.link-card:hover .items span {
+  transform: scale(1.2);
+  text-shadow: 0 0 12px rgba(255, 255, 255, 0.9);
+}
+
+/* Texto */
+.link-card p {
+  margin-top: 20px;
+  font-size: 18px;
+  font-weight: bold;
+  transition: all 0.3s ease;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+.link-card:hover p {
+  font-size: 20px;
+}
+
+/* Footer */
+.site-footer {
+  padding: 20px 0;
+  text-align: center;
+  width: 100%;
+  position: relative;
+  z-index: 1;
+}
+
+.footer-text {
+  color: white;
+  margin: 0 0 8px 0;
+  font-size: 14px;
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+}
+
+.footer-links a {
+  color: #a29bfe;
+  text-decoration: none;
+  margin: 0 12px;
+  font-size: 13px;
+  transition: all 0.3s;
+  border-bottom: 1px solid transparent;
+}
+
+.footer-links a:hover {
+  color: #6c5ce7;
+  border-bottom: 1px solid #6c5ce7;
+}
+
+/* Versión móvil */
+@media (max-width: 768px) {
+  .app-container {
+    padding: 0 15px 15px;
+  }
+  
+  .main-title {
+    font-size: 2.5rem;
+    margin: 5px 0 0;
+  }
+  
+  .main-title::after {
+    width: 100px;
+    height: 4px;
+    margin: 8px auto 15px;
+  }
+  
+  .linktree-container {
+    flex-direction: column;
+    height: auto;
+    align-items: center;
+    gap: 15px;
+    margin-top: 20px;
+  }
+  
+  .link-card {
+    width: 80%;
+    height: 120px;
+    padding: 20px;
+    border-radius: 30px;
+  }
+  
+  .link-card img,
+  .items span {
+    filter: drop-shadow(0 0 6px rgba(255, 255, 255, 0.5));
+    text-shadow: 0 0 6px rgba(255, 255, 255, 0.5);
+  }
+}
+
+@media (max-width: 480px) {
+  .main-title {
+    font-size: 2rem;
+  }
+  
+  .link-card {
+    width: 90%;
+    height: 100px;
+    padding: 15px;
+  }
+  
+  .link-card img {
+    width: 50px;
+    height: 50px;
+  }
+  
+  .items span {
+    font-size: 30px;
+  }
+}
